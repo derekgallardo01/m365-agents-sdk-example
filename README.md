@@ -40,6 +40,14 @@ docker run --rm m365-agents-example pytest -q             # runs the tests
 docker run --rm -it m365-agents-example m365-agents-example --interactive
 ```
 
+## Example: production scenario
+
+**[examples/teams_helpdesk.py](examples/teams_helpdesk.py)** — One employee, three channels (Teams chat, Outlook HTML, Copilot canvas card), four intents — full multi-channel helpdesk session with handoff payload
+
+```bash
+python examples/teams_helpdesk.py
+```
+
 ## What it's for
 
 Microsoft's M365 Agents SDK is the framework for building agents that
