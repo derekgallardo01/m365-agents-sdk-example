@@ -1,0 +1,29 @@
+[project]
+name = "m365-agents-example"
+version = "1.0.0"
+description = "An agent shaped like a Microsoft 365 Agents SDK build: declarative manifest, typed activity handlers, M365 connectors as tools, channel-aware responses (Teams chat / Outlook reply / Copilot canvas). Stub-by-default so the demo runs anywhere; one env var swaps to the real SDK + Azure Bot Service."
+authors = [{name = "Derek Gallardo", email = "derekgallardo01@gmail.com"}]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# The real Microsoft 365 Agents SDK packages (botbuilder-core, m365-agents).
+# Optional - the kit's default path is stdlib-only.
+m365 = [
+    "botbuilder-core>=4.16.0",
+]
+
+[project.scripts]
+m365-agents-example = "m365_agents_example.cli:main"
+
+[project.urls]
+Repository = "https://github.com/derekgallardo01/m365-agents-sdk-example"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

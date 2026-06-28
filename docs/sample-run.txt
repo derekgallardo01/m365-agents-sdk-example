@@ -1,0 +1,41 @@
+
+[teams] alice> What's my next meeting?
+   intent:    find_meeting
+   shape:     chat
+   response:  Next meeting: "1:1 with Sarah" at 2026-06-28T14:00:00 with sarah.chen@acme.com.
+
+_(sources: graph_calendar:evt-001)_
+   citations: ['graph_calendar:evt-001']
+
+[teams] alice> Who is Sarah Chen?
+   intent:    lookup_person
+   shape:     chat
+   response:  Sarah Chen - Senior Engineer, Engineering. Email: sarah.chen@acme.com.
+
+_(sources: graph_directory:u-001)_
+   citations: ['graph_directory:u-001']
+
+[outlook] bob> What's our policy on data residency?
+   intent:    policy_question
+   shape:     email
+   response:  <p>From data-residency.md: Data residency: customer tenant data is stor...</p><p><em>Sources: sharepoint_search:data-residency.md · sharepoint_search:data-classification.md</em></p>
+   citations: ['sharepoint_search:data-residency.md', 'sharepoint_search:data-classification.md']
+
+[copilot-canvas] carol> Show me Copilot adoption status.
+   intent:    copilot_adoption
+   shape:     adaptive_card
+   response:  (card payload)
+   citations: ['graph_reports:acme.onmicrosoft.com']
+
+[teams] dan> I'm stuck, can you escalate?
+   intent:    escalate_to_human
+   shape:     chat
+   response:  I'll hand you off to a human. I've created ticket #2026-0628-001 in the helpdesk queue with this conversation attached.
+   handoff:   {'queue': 'helpdesk', 'ticket_id': '2026-0628-001', 'reason': 'user requested human handoff'}
+
+[teams] eve> Sing me a song.
+   intent:    unmatched
+   shape:     chat
+   response:  I'm not sure which task you mean. I can help with: calendar lookups, finding people in the directory, Copilot adoption stats, policy questions, or escalating to a human.
+
+Provider: stub  (set M365_AGENT_PROVIDER=sdk to swap)

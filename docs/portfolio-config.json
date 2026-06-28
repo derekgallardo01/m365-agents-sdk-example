@@ -1,0 +1,12 @@
+{
+  "repo": "m365-agents-sdk-example",
+  "title": "M365 Agents SDK Example",
+  "tagline": "Production-shaped Microsoft 365 agent: declarative manifest + typed handlers + Graph connectors + channel-aware responses (Teams chat / Outlook email / Copilot canvas card). Stub-by-default; one env var swaps to the real SDK.",
+  "kicker": "Microsoft 365 · Agents SDK · Capability Demo",
+  "features": [
+    {"label": "Intents", "value": "5 typed handlers"},
+    {"label": "Channels", "value": "3 (chat/email/card)"},
+    {"label": "Tests", "value": "25 pytest + 6 evals"}
+  ],
+  "theme": {"primary": "#0078d4", "accent": "#0099bc"}
+}

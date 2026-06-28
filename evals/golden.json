@@ -1,0 +1,53 @@
+{
+  "description": "Golden evaluation cases for the M365 Agents SDK example. Each case asserts (a) which intent the manifest matches, (b) which channel-rendered shape is returned, and (c) which connector citation(s) appear. CI gates on 100% pass.",
+  "cases": [
+    {
+      "id": "teams-next-meeting",
+      "channel": "teams",
+      "message": "What's my next meeting?",
+      "expect_intent": "find_meeting",
+      "expect_shape": "chat",
+      "expect_citation_prefix": "graph_calendar:"
+    },
+    {
+      "id": "outlook-policy-question",
+      "channel": "outlook",
+      "message": "What's our policy on data residency?",
+      "expect_intent": "policy_question",
+      "expect_shape": "email",
+      "expect_citation_prefix": "sharepoint_search:"
+    },
+    {
+      "id": "copilot-canvas-adoption",
+      "channel": "copilot-canvas",
+      "message": "Show Copilot adoption status",
+      "expect_intent": "copilot_adoption",
+      "expect_shape": "adaptive_card",
+      "expect_citation_prefix": "graph_reports:"
+    },
+    {
+      "id": "teams-lookup-person",
+      "channel": "teams",
+      "message": "Who is Alex Park",
+      "expect_intent": "lookup_person",
+      "expect_shape": "chat",
+      "expect_citation_prefix": "graph_directory:"
+    },
+    {
+      "id": "teams-escalate",
+      "channel": "teams",
+      "message": "Please escalate to a human",
+      "expect_intent": "escalate_to_human",
+      "expect_shape": "chat",
+      "expect_citation_prefix": null
+    },
+    {
+      "id": "teams-unmatched-falls-through",
+      "channel": "teams",
+      "message": "tell me a joke about lawyers",
+      "expect_intent": "unmatched",
+      "expect_shape": "chat",
+      "expect_citation_prefix": null
+    }
+  ]
+}
